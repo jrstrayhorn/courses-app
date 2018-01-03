@@ -6,6 +6,7 @@ import Header from './common/Header';
 import HomePage from './home/HomePage';
 import AboutPage from './about/AboutPage';
 import CoursesPage from './course/CoursesPage';
+import ManageCoursePage from './course/ManageCoursePage';
 
 class App extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/courses" component={CoursesPage} />
+            <Route path="/course/:id" component={ManageCoursePage} />
           </div>
         </BrowserRouter>
       </div>
