@@ -8,13 +8,15 @@ import AboutPage from './about/AboutPage';
 import CoursesPage from './course/CoursesPage';
 import ManageCoursePage from './course/ManageCoursePage';
 
+import { connect } from 'react-redux';
+
 class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
         <BrowserRouter>
           <div>
-            <Header />
+            <Header loading={this.props.loading} />
             <Route exact path="/" component={HomePage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/courses" component={CoursesPage} />
@@ -27,4 +29,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    loading: state.ajaxCallsInProgress > 0
+  };
+}
+
+export default connect(mapStateToProps)(App);
