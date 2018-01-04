@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <BrowserRouter>
+        <BrowserRouter basename="/courses-app">
           <div>
             <Header loading={this.props.loading} />
             <Route exact path="/" component={HomePage} />
